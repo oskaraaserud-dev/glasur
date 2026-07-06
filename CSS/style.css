@@ -123,8 +123,13 @@ a {
   min-width: 250px;
 }
 
-.apningstider td {
+.apningstider td,
+.apningstider th {
   padding: 6px 20px 6px 0;
+  background-color: transparent;
+  color: inherit;
+  font-weight: normal;
+  text-align: left;
 }
 
 header {
