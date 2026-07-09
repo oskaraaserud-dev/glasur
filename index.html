@@ -12,30 +12,61 @@
   <link rel="stylesheet" href="CSS/style.css">
 </head>
 <body>
-  <header>
+  <header class="over-hero">
   <div class="brand">
     <img src="Bilder/glasur-logo.png" alt="" class="header-logo">
     <h1>glaSUR Bakeri</h1>
   </div>
-  <nav>
-    <a href="index.html">Hjem</a>
-    <a href="Meny.html">Meny</a>
-    <a href="OmOss.html">Om oss</a>
+
+  <nav class="kjevle-nav" aria-label="Hovednavigasjon">
+    <span class="kjevle-handle" aria-hidden="true"></span>
+    <span class="kjevle-ring" aria-hidden="true"></span>
+    <ul class="kjevle-list">
+      <li>
+        <a href="index.html" class="kjevle-link" aria-current="page">
+          <span class="kjevle-icon-wrap">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11.5 12 4l9 7.5"/><path d="M5.5 10v9a1 1 0 0 0 1 1H9v-5a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v5h2.5a1 1 0 0 0 1-1v-9"/></svg>
+          </span>
+          <span class="kjevle-label">Hjem</span>
+        </a>
+      </li>
+      <li>
+        <a href="Meny.html" class="kjevle-link">
+          <span class="kjevle-icon-wrap">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 8h8M8 12h8M8 16h5"/></svg>
+          </span>
+          <span class="kjevle-label">Meny</span>
+        </a>
+      </li>
+      <li>
+        <a href="OmOss.html" class="kjevle-link">
+          <span class="kjevle-icon-wrap">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><line x1="12" y1="11" x2="12" y2="16"/><circle cx="12" cy="7.5" r="0.9" fill="currentColor" stroke="none"/></svg>
+          </span>
+          <span class="kjevle-label">Om oss</span>
+        </a>
+      </li>
+    </ul>
+    <span class="kjevle-ring" aria-hidden="true"></span>
+    <span class="kjevle-handle" aria-hidden="true"></span>
   </nav>
   </header>
-  <main>
-  <section class="hero">
-  <img src="Bilder/glasur-logo.png" alt="glaSUR logo">
-  <h2>Velkommen til glaSUR Bakeri</h2>
-  <p>Nybakt dansk bakverk hver dag — kom innom og kjenn duften!</p>
-  <a href="Meny.html" class="knapp">Se vår meny</a>
-</section>
 
-<section class="forsidebilde">
-  <img src="Bilder/glasur-bakevarer.jpg" alt="Nybakte bakevarer" loading="lazy">
-</section>
+  <section class="hero-full">
+    <div class="hero-full__bg" aria-hidden="true"></div>
+    <div class="hero-full__content">
+      <img src="Bilder/glasur-logo.png" alt="glaSUR logo" class="hero-full__logo reveal is-visible">
+      <h2 class="reveal is-visible reveal-delay-1">Velkommen til glaSUR Bakeri</h2>
+      <p class="reveal is-visible reveal-delay-2">Nybakt dansk bakverk hver dag — kom innom og kjenn duften!</p>
+      <a href="Meny.html" class="knapp reveal is-visible reveal-delay-3">Se vår meny</a>
+    </div>
+    <a href="#innhold" class="scroll-hint" aria-label="Bla ned">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+    </a>
+  </section>
 
-<section>
+  <main id="innhold">
+  <section class="reveal">
   <h2>Ukas tilbud</h2>
   <p>Denne uken anbefaler vi:</p>
 
@@ -45,7 +76,7 @@
     <p class="pris">Kun 30 kr denne uken! (Vanlig pris 40 kr)</p>
   </div>
 </section>
-  <section>
+  <section class="reveal">
   <h2>Åpningstider</h2>
   <table class="apningstider">
     <tr><th scope="row">Mandag</th><td>07:00 - 16:00</td></tr>
@@ -57,9 +88,9 @@
     <tr><th scope="row">Søndag</th><td>07:00 - 16:00</td></tr>
   </table>
 </section>
-    <section>
+    <section class="reveal">
       <h2>Kontaktskjema</h2>
-  <form action="https://formsubmit.co/oskar.aaserud@gmail.com" method="POST">
+  <form action="https://formsubmit.co/oskar@aaserudweb.no" method="POST">
     <input type="hidden" name="_subject" value="Ny melding fra glaSUR-nettsiden">
     <input type="hidden" name="_captcha" value="false">
     <input type="hidden" name="_next" value="https://oskaraaserud-dev.github.io/glasur/takk.html">
@@ -85,5 +116,6 @@
   <a href="https://www.facebook.com/profile.php?id=61575648731493" target="_blank" rel="noopener noreferrer">Facebook</a>
 <a href="https://www.instagram.com/glasur.bakeri/" target="_blank" rel="noopener noreferrer">Instagram</a>
 </footer>
+  <script src="JS/main.js"></script>
 </body>
 </html>
