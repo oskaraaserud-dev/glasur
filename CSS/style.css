@@ -387,7 +387,7 @@ a:focus-visible {
 .hero-full__bg {
   position: absolute;
   inset: 0;
-  background-image: url('../Bilder/hero.png');
+  background-image: url('../Bilder/hero.jpg');
   background-size: cover;
   background-position: center;
   transform: scale(1.12);
