@@ -1,0 +1,53 @@
+# Publiserer siden til GitHub Pages.
+#
+# HVORFOR DENNE FILA FINNES:
+# Pages sitt standardbygg («Deploy from a branch») sjekker IKKE ut submoduler.
+# Siden delt kode (CSS, JS, generiske bilder) ligger i mal/ som en submodule
+# mot bakeri-mal, ville standardbygget publisert en side uten stilark.
+# Denne workflowen gjør det eneste som mangler: `submodules: recursive`.
+#
+# Det er ingen bygging her – ingen npm, ingen rammeverk, ingenting å kjøre
+# lokalt. GitHub sjekker ut repoet med submodulen og laster opp filene som de er.
+#
+# Krever at Pages-kilden står på «GitHub Actions» i Settings → Pages.
+
+name: Publiser til GitHub Pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Ikke avbryt en pågående publisering; la den fullføre.
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  publiser:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deploy.outputs.page_url }}
+    steps:
+      - name: Sjekk ut repoet MED submodulen
+        uses: actions/checkout@v4
+        with:
+          submodules: recursive
+
+      - name: Klargjør Pages
+        uses: actions/configure-pages@v5
+
+      - name: Pakk siden (hele repoet, som det er)
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: .
+
+      - name: Publiser
+        id: deploy
+        uses: actions/deploy-pages@v4
